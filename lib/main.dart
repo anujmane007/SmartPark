@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/components/welcome_screen.dart';
-// i am TheXzavierr
+// i am TheXzavierrr
 
 void main() {
   runApp(MyApp());
