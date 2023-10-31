@@ -7,7 +7,7 @@ import 'package:flutter_application_street_parking/screens/components/vehicle_re
 
 class home_screen extends StatelessWidget {
   const home_screen({super.key});
-// CHANING THE COMMANDS
+// CHANGING THE COMMANDS
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -292,33 +292,32 @@ class home_screen extends StatelessWidget {
                     ),
                   );
                 },
-              child: Container(
-                width: 375,
-                height: 248,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage("assets/images/home_page_background.png"),
-                    fit: BoxFit.contain,
+                child: Container(
+                  width: 375,
+                  height: 248,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage(
+                          "assets/images/home_page_background.png"),
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
-              ),
               ),
             ),
             Positioned(
-              left: 240,
-              top: 24,
-              child: Container(
-                width: 46,
-                height: 46,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage("assets/images/search_icon.png"),
-                    fit: BoxFit.fill,
+                left: 240,
+                top: 24,
+                child: Container(
+                  width: 46,
+                  height: 46,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("assets/images/search_icon.png"),
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-              
-              )
-            ),
+                )),
             Positioned(
               left: 300,
               top: 406,
@@ -438,44 +437,44 @@ class home_screen extends StatelessWidget {
                     ),
                   );
                 },
-              child: SizedBox(
-                width: 241,
-                height: 76,
-                child: Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'Park Fast\n',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 36,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
+                child: SizedBox(
+                  width: 241,
+                  height: 76,
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Park Fast\n',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
                         ),
-                      ),
-                      TextSpan(
-                        text:
-                            'Quick Navigation to nearest Available Parking Spot',
-                        style: TextStyle(
-                          color: Colors.white,
-                          letterSpacing: 1.5,
-                          fontSize: 15,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
+                        TextSpan(
+                          text:
+                              'Quick Navigation to nearest Available Parking Spot',
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 1.5,
+                            fontSize: 15,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
               ),
             ),
             Positioned(
               left: 165,
               top: 640,
-               child: GestureDetector(
+              child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
@@ -485,38 +484,38 @@ class home_screen extends StatelessWidget {
                     ),
                   );
                 },
-              child: SizedBox(
-                width: 225,
-                height: 76,
-                child: Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'Add Vehicle\n',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 36,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
+                child: SizedBox(
+                  width: 225,
+                  height: 76,
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Add Vehicle\n',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
                         ),
-                      ),
-                      TextSpan(
-                        text: 'Register New Vehicle',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          letterSpacing: 2,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
+                        TextSpan(
+                          text: 'Register New Vehicle',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            letterSpacing: 2,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
-               ),
             ),
             Positioned(
               left: 287,
@@ -549,7 +548,7 @@ class home_screen extends StatelessWidget {
             Positioned(
               left: 47,
               top: 750,
-               child: GestureDetector(
+              child: GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
@@ -559,38 +558,38 @@ class home_screen extends StatelessWidget {
                     ),
                   );
                 },
-              child: SizedBox(
-                width: 318,
-                height: 77,
-                child: Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'Report\n',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 36,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
+                child: SizedBox(
+                  width: 318,
+                  height: 77,
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Report\n',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
                         ),
-                      ),
-                      TextSpan(
-                        text: 'Invalid Parking',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          letterSpacing: 1.4,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w700,
-                          height: 0,
+                        TextSpan(
+                          text: 'Invalid Parking',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15,
+                            letterSpacing: 1.4,
+                            fontFamily: 'Inter',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
-               ),
             ),
             Positioned(
               left: 287,
