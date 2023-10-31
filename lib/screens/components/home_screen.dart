@@ -7,7 +7,7 @@ import 'package:flutter_application_street_parking/screens/components/vehicle_re
 
 class home_screen extends StatelessWidget {
   const home_screen({super.key});
-
+// CHANING THE COMMANDS
   @override
   Widget build(BuildContext context) {
     return Scaffold(
