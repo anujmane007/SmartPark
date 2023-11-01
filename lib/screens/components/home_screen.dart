@@ -554,7 +554,7 @@ class home_screen extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) {
-                        return Report_page();
+                        return report_page();
                       },
                     ),
                   );
