@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
 
 class report_page extends StatefulWidget {
   const report_page({super.key});
@@ -15,7 +16,7 @@ class _report_pageState extends State<report_page> {
         width: 430,
         height: 932,
         clipBehavior: Clip.antiAlias,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment(0.21, -0.98),
             end: Alignment(-0.21, 0.98),
@@ -31,7 +32,7 @@ class _report_pageState extends State<report_page> {
                 width: 363,
                 height: 61,
                 decoration: ShapeDecoration(
-                  gradient: RadialGradient(
+                  gradient: const RadialGradient(
                     center: Alignment(1, 0.50),
                     radius: 0.35,
                     colors: [Color(0xFF3BB403), Color(0xFF00FF73)],
@@ -40,7 +41,7 @@ class _report_pageState extends State<report_page> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   shadows: [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Color(0x3F000000),
                       blurRadius: 4,
                       offset: Offset(0, 4),
@@ -57,7 +58,7 @@ class _report_pageState extends State<report_page> {
                 width: 370,
                 height: 60,
                 decoration: ShapeDecoration(
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     begin: Alignment(-1.00, 0.03),
                     end: Alignment(1, -0.03),
                     colors: [Color(0xFFFF1E00), Color(0xFFDE8500)],
@@ -66,7 +67,7 @@ class _report_pageState extends State<report_page> {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   shadows: [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Color(0x3F000000),
                       blurRadius: 4,
                       offset: Offset(0, 4),
@@ -76,7 +77,7 @@ class _report_pageState extends State<report_page> {
                 ),
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 115,
               top: 40,
               child: SizedBox(
@@ -102,7 +103,7 @@ class _report_pageState extends State<report_page> {
                 width: 365,
                 height: 61,
                 decoration: ShapeDecoration(
-                  gradient: RadialGradient(
+                  gradient: const RadialGradient(
                     center: Alignment(1, 0.50),
                     radius: 0.35,
                     colors: [Color(0xFF3BB403), Color(0xFF00FF73)],
@@ -111,7 +112,7 @@ class _report_pageState extends State<report_page> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   shadows: [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Color(0x3F000000),
                       blurRadius: 4,
                       offset: Offset(0, 4),
@@ -121,7 +122,7 @@ class _report_pageState extends State<report_page> {
                 ),
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 70,
               top: 770,
               child: SizedBox(
@@ -146,81 +147,67 @@ class _report_pageState extends State<report_page> {
                 width: 60,
                 height: 60,
                 decoration: BoxDecoration(
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     image: NetworkImage("assets/images/phone.jpg"),
                     fit: BoxFit.fill,
                   ),
-                  // boxShadow: [
-                  //     BoxShadow(
-                  //         color: Color(0x3F000000),
-                  //         blurRadius: 4,
-                  //         offset: Offset(0, 4),
-                  //         spreadRadius: 0,
-                  //     )
-
-                  // ],
                   shape: BoxShape
                       .rectangle, // Use BoxShape.rectangle for a rectangular shape
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
             ),
-            // Positioned(
-            //     left: 23,
-            //     top: 270,
-            //     child: SizedBox(
-            //         width: 385,
-            //         height: 20,
-            //         child: Text.rich(
-            //             TextSpan(
-            //                 children: [
-            //                     TextSpan(
-            //                         text: 'Tap ',
-            //                         style: TextStyle(
-            //                             color: Color(0xFFE1E1E1),
-            //                             fontSize: 14,
-            //                             fontFamily: 'Inter',
-            //                             fontWeight: FontWeight.w400,
-            //                             height: 0,
-            //                         ),
-            //                     ),
-            //                     TextSpan(
-            //                         text: 'here to contact the authority of your respected area',
-            //                         style: TextStyle(
-            //                             color: Color(0xFFE1E1E1),
-            //                             fontSize: 14,
-            //                             fontFamily: 'Inter',
-            //                             fontWeight: FontWeight.w400,
-            //                             height: 0,
-            //                         ),
-            //                     ),
-            //                 ],
-            //             ),
-            //             textAlign: TextAlign.center,
-            //         ),
-            //     ),
-            // ),
             Positioned(
               left: 16,
               top: 585,
-              child: GestureDetector(
-                onTap: () {
-                
-                },
-                child: Container(
-                  width: 369,
-                  height: 65,
-                  decoration: ShapeDecoration(
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25),
+              child: Container(
+                width: 369,
+                height: 65,
+                decoration: ShapeDecoration(
+                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    side: const BorderSide(
+                      width: 2,
                     ),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                ),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    // primary: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                          25), // Set the border radius to 25
+                    ),
+                  ),
+                  onPressed: () async {
+                    // Open the file picker and handle the selected file
+                    FilePickerResult? result =
+                        await FilePicker.platform.pickFiles();
+
+                    if (result != null) {
+                      PlatformFile file = result.files.first;
+                      // Handle the selected file, you can access it using file.path
+                      print('Selected file: ${file.name}');
+                    } else {
+                      // User canceled the file picker
+                      print('No file selected');
+                    }
+                  },
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Icon(Icons
+                          .photo_camera), // You can change the icon to one representing file upload
+                      SizedBox(width: 8),
+                      Text("Choose a Photo"),
+                    ],
                   ),
                 ),
               ),
             ),
 
-            Positioned(
+            const Positioned(
               left: 29,
               top: 440,
               child: SizedBox(
@@ -238,7 +225,7 @@ class _report_pageState extends State<report_page> {
                 ),
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 30,
               top: 555,
               child: SizedBox(
@@ -256,7 +243,7 @@ class _report_pageState extends State<report_page> {
                 ),
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 27,
               top: 350,
               child: SizedBox(
@@ -281,7 +268,7 @@ class _report_pageState extends State<report_page> {
                 width: 365,
                 height: 61,
                 decoration: ShapeDecoration(
-                  gradient: RadialGradient(
+                  gradient: const RadialGradient(
                     center: Alignment(1, 0.50),
                     radius: 0.35,
                     colors: [Color(0xFF3BB403), Color(0xFF00FF73)],
@@ -290,7 +277,7 @@ class _report_pageState extends State<report_page> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   shadows: [
-                    BoxShadow(
+                    const BoxShadow(
                       color: Color(0x3F000000),
                       blurRadius: 4,
                       offset: Offset(0, 4),
@@ -300,7 +287,7 @@ class _report_pageState extends State<report_page> {
                 ),
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 140,
               top: 680,
               child: SizedBox(
@@ -323,7 +310,7 @@ class _report_pageState extends State<report_page> {
               child: Container(
                 width: 400,
                 height: 242,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: NetworkImage("assets/images/ReportPage_Vehicle.png"),
                     fit: BoxFit.fill,
@@ -341,11 +328,18 @@ class _report_pageState extends State<report_page> {
                 decoration: ShapeDecoration(
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
-                    side: BorderSide(
+                    side: const BorderSide(
                       width: 2,
-                      strokeAlign: BorderSide.strokeAlignCenter,
                     ),
                     borderRadius: BorderRadius.circular(25),
+                  ),
+                ),
+                child: const TextField(
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Enter Vehicle Number', // Placeholder text
+                    hintStyle:
+                        TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
