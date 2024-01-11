@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "28857933936",
+    "project_id": "hackthon-5d162",
+    "storage_bucket": "hackthon-5d162.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28857933936:android:c0b9b60615fce0e0dad4b5",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_street_parking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXfkrGFBt55jx9xTaodNIJTlPUIxpJH8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

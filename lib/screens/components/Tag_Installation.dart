@@ -1,31 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_street_parking/screens/components/tag_request.dart';
 
 class TagInstallation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: 430,
-        height: 932,
-        clipBehavior: Clip.antiAlias,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment(-0.21, 0.98),
-            end: Alignment(0.21, -0.98),
-            colors: const [Color(0xFF1C08FF), Color(0xFF3EFFFF)],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+          width: 430,
+          height: 932,
+          clipBehavior: Clip.antiAlias,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment(-0.21, 0.98),
+              end: Alignment(0.21, -0.98),
+              colors: [Color(0xFF1C08FF), Color(0xFF3EFFFF)],
+            ),
           ),
-        ),
-        child: Stack(
-          children: [
-            // Background Container
-            _buildBackgroundContainer(),
-
-            // Texts and Images
-            _buildTextsAndImages(),
-
-            // Borders
-            _buildBorders(),
-          ],
+          child: Stack(
+            children: [
+              // Background Container
+              _buildBackgroundContainer(),
+        
+              // Texts and Images
+              _buildTextsAndImages(context),
+        
+              // Borders
+              _buildBorders(context),
+            ],
+          ),
         ),
       ),
     );
@@ -40,14 +44,14 @@ class TagInstallation extends StatelessWidget {
         width: 370,
         height: 70,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             begin: Alignment(-1.00, 0.03),
             end: Alignment(1, -0.03),
-            colors: const [Color(0xFFFF6C03), Color(0xFFFFB700)],
+            colors: [Color(0xFFFF6C03), Color(0xFFFFB700)],
           ),
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(30),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Color(0x3F000000),
               blurRadius: 4,
@@ -61,10 +65,10 @@ class TagInstallation extends StatelessWidget {
   }
 
   // Extracted widget for texts and images
-  Widget _buildTextsAndImages() {
+  Widget _buildTextsAndImages(BuildContext context) {
     return Stack(
       children: [
-        Positioned(
+        const Positioned(
           left: 41,
           top: 47,
           child: SizedBox(
@@ -88,9 +92,9 @@ class TagInstallation extends StatelessWidget {
           child: Container(
             width: 361,
             height: 255,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("images/MarutiSuzuki.png"),
+                image: AssetImage("assets/images/MarutiSuzuki.png"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -106,7 +110,7 @@ class TagInstallation extends StatelessWidget {
               color: Colors.white,
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(40),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Color(0x3F000000),
                   blurRadius: 4,
@@ -117,7 +121,7 @@ class TagInstallation extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(
+        const Positioned(
           left: 37,
           top: 798,
           child: SizedBox(
@@ -138,17 +142,25 @@ class TagInstallation extends StatelessWidget {
         Positioned(
           left: 40,
           top: 562,
-          child: SizedBox(
-            width: 356,
-            height: 73,
-            child: Text(
-              'Place Tag \nInstallation request',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 30,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w700,
+          child: InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => tag_request()),
+              );
+            },
+            child: const SizedBox(
+              width: 356,
+              height: 73,
+              child: Text(
+                'Place Tag \nInstallation request',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ),
@@ -156,13 +168,21 @@ class TagInstallation extends StatelessWidget {
         Positioned(
           left: 164,
           top: 687,
-          child: Container(
-            width: 101,
-            height: 101,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("images/RedRFID.png"),
-                fit: BoxFit.cover,
+          child: InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => tag_request()),
+              );
+            },
+            child: Container(
+              width: 101,
+              height: 101,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/RedRFID.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
@@ -177,9 +197,9 @@ class TagInstallation extends StatelessWidget {
             child: Container(
               width: 222.32,
               height: 174.51,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("images/Splender.png"),
+                  image: AssetImage("assets/images/Splender.png"),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -191,7 +211,7 @@ class TagInstallation extends StatelessWidget {
   }
 
   // Extracted widget for borders
-  Widget _buildBorders() {
+  Widget _buildBorders(BuildContext context) {
     return Stack(
       children: [
         Positioned(
@@ -211,13 +231,21 @@ class TagInstallation extends StatelessWidget {
         Positioned(
           left: 164,
           top: 447,
-          child: Container(
-            width: 101,
-            height: 101,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("images/BlueRFID.png"),
-                fit: BoxFit.cover,
+          child: InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => tag_request()),
+              );
+            },
+            child: Container(
+              width: 101,
+              height: 101,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/BlueRFID.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),

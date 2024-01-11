@@ -30,9 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
-
+  firebase_core: ^2.22.0
+  firebase_auth: ^4.14.0
+  cloud_firestore: ^4.13.1
+  http: ^1.1.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -49,6 +50,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   image_picker: ^1.0.4
   file_picker: ^6.0.0
+  shared_preferences: ^2.2.2 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -69,7 +71,22 @@ flutter:
     - assets/images/registration_page.png
     - assets/images/admin_page.png
     - assets/images/park_fast2.jpeg
-     
+    - assets/images/rs_home.png
+    - assets/images/Logout 1.png
+    - assets/images/Add_vechicle.png
+    - assets/images/BlueRFID.png
+    - assets/images/home_page_background.png
+    - assets/images/MarutiSuzuki.png
+    - assets/images/park_fast.png
+    - assets/images/phone.jpg
+    - assets/images/RedRFID.png
+    - assets/images/Registered_Vehicle_info.jpg
+    - assets/images/report_vechicle.png
+    - assets/images/ReportPage_Vehicle.png
+    - assets/images/search_icon.png
+    - assets/images/Splender.png
+    - assets/images/Vehicle_Registration.jpg
+    - assets/images/Welcome_page.png
 
 
     
