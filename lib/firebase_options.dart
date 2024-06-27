@@ -44,38 +44,42 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCVoVgzasSH5qgxVEyv2ZVH2x0ZDD1LScc',
-    appId: '1:28857933936:web:e0fefaa73a082757dad4b5',
-    messagingSenderId: '28857933936',
-    projectId: 'hackthon-5d162',
-    authDomain: 'hackthon-5d162.firebaseapp.com',
-    storageBucket: 'hackthon-5d162.appspot.com',
-    measurementId: 'G-86JGHMHZCJ',
+    apiKey: 'AIzaSyBKrzFsOBi9oMknp-vJUUxLQim-GGmHs5o',
+    appId: '1:505234543952:web:69cc6839153b366ad48855',
+    messagingSenderId: '505234543952',
+    projectId: 'dipex-ba431',
+    authDomain: 'dipex-ba431.firebaseapp.com',
+    databaseURL: 'https://dipex-ba431-default-rtdb.firebaseio.com',
+    storageBucket: 'dipex-ba431.appspot.com',
+    measurementId: 'G-KFSZHVF8BV',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCXfkrGFBt55jx9xTaodNIJTlPUIxpJH8w',
-    appId: '1:28857933936:android:c0b9b60615fce0e0dad4b5',
-    messagingSenderId: '28857933936',
-    projectId: 'hackthon-5d162',
-    storageBucket: 'hackthon-5d162.appspot.com',
+    apiKey: 'AIzaSyA_lT29mjWEmeDokU30Z6of1iUvqm5DwnE',
+    appId: '1:505234543952:android:2aa594d627b8e4b6d48855',
+    messagingSenderId: '505234543952',
+    projectId: 'dipex-ba431',
+    databaseURL: 'https://dipex-ba431-default-rtdb.firebaseio.com',
+    storageBucket: 'dipex-ba431.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDvbturAhCRVsIFbEvXveZr2-fNXpBXydc',
-    appId: '1:28857933936:ios:9876c691417dec9fdad4b5',
-    messagingSenderId: '28857933936',
-    projectId: 'hackthon-5d162',
-    storageBucket: 'hackthon-5d162.appspot.com',
+    apiKey: 'AIzaSyD1qQy4gurvX-d2w_whpaXzeyWjYelUti4',
+    appId: '1:505234543952:ios:164e475c5b874033d48855',
+    messagingSenderId: '505234543952',
+    projectId: 'dipex-ba431',
+    databaseURL: 'https://dipex-ba431-default-rtdb.firebaseio.com',
+    storageBucket: 'dipex-ba431.appspot.com',
     iosBundleId: 'com.example.flutterApplicationStreetParking',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDvbturAhCRVsIFbEvXveZr2-fNXpBXydc',
-    appId: '1:28857933936:ios:d987ab8de0507214dad4b5',
-    messagingSenderId: '28857933936',
-    projectId: 'hackthon-5d162',
-    storageBucket: 'hackthon-5d162.appspot.com',
+    apiKey: 'AIzaSyD1qQy4gurvX-d2w_whpaXzeyWjYelUti4',
+    appId: '1:505234543952:ios:9961b6b00b349ed8d48855',
+    messagingSenderId: '505234543952',
+    projectId: 'dipex-ba431',
+    databaseURL: 'https://dipex-ba431-default-rtdb.firebaseio.com',
+    storageBucket: 'dipex-ba431.appspot.com',
     iosBundleId: 'com.example.flutterApplicationStreetParking.RunnerTests',
   );
 }

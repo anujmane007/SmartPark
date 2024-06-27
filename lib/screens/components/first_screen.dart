@@ -61,7 +61,7 @@ class first_screen extends StatelessWidget {
                         TextSpan(
                           text: 'Welcome To',
                           style: TextStyle(
-                            color: Color(0xFFFF8900),
+                            color: Color(0xFF5BC52A),
                             fontSize: 48,
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w900,
@@ -71,7 +71,7 @@ class first_screen extends StatelessWidget {
                         TextSpan(
                           text: ' ',
                           style: TextStyle(
-                            color: Color(0xFFFF8900),
+                            color: Color(0xFF5BC52A),
                             fontSize: 55,
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w900,
@@ -81,12 +81,13 @@ class first_screen extends StatelessWidget {
                         TextSpan(
                           text: 'SmartPark',
                           style: TextStyle(
-                            color: Color(0xFF3BB403),
+                            color: Color(0xFF5BC52A),
                             fontSize: 64,
                             fontStyle: FontStyle.italic,
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w800,
                             decoration: TextDecoration.underline,
+                            decorationColor: Color(0xFF5BC52A),
                             height: 0,
                           ),
                         ),
@@ -122,7 +123,7 @@ class first_screen extends StatelessWidget {
                   width: 349,
                   height: 65,
                   decoration: ShapeDecoration(
-                    color: const Color(0xFFF5860C),
+                    color: const Color(0xFF337913),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -144,7 +145,7 @@ class first_screen extends StatelessWidget {
                   width: 349,
                   height: 65,
                   decoration: ShapeDecoration(
-                    color: const Color(0xCE021BFC),
+                    color: const Color(0xFF032BFF),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -266,7 +267,7 @@ class first_screen extends StatelessWidget {
                   width: 349,
                   height: 62,
                   decoration: ShapeDecoration(
-                    color: const Color(0xFF3BB403),
+                    color: const Color(0xFF5BC52A),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),

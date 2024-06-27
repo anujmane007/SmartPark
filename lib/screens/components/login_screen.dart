@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_street_parking/screens/components/first_screen.dart';
 import 'package:flutter_application_street_parking/screens/components/globals.dart';
 import 'package:flutter_application_street_parking/screens/components/home_screen.dart';
+import 'package:flutter_application_street_parking/screens/components/registration_screen.dart';
 
 // ignore: camel_case_types
 class Login_screen extends StatelessWidget {
@@ -61,6 +63,56 @@ class Login_screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Login Please !!!"),
+        centerTitle: true,
+        backgroundColor: Colors.orangeAccent,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.orangeAccent,
+              ),
+              child: Text(
+                'Hi',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: const Text('Welcome'),
+              onTap: () {
+                // Navigate to the home page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const first_screen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Sign-up'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RegistrationScreen()),
+                ); // Closes the drawer
+              },
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
@@ -72,7 +124,7 @@ class Login_screen extends StatelessWidget {
             children: [
               const Positioned(
                 left: 30,
-                top: 420,
+                top: 400,
                 child: SizedBox(
                   width: 211,
                   height: 34,
@@ -90,7 +142,7 @@ class Login_screen extends StatelessWidget {
               ),
               const Positioned(
                 left: 32,
-                top: 565,
+                top: 530,
                 child: SizedBox(
                   width: 211,
                   height: 34,
@@ -108,7 +160,7 @@ class Login_screen extends StatelessWidget {
               ),
               Positioned(
                 left: 34,
-                top: 600,
+                top: 560,
                 child: Container(
                   width: 340,
                   height: 65,
@@ -135,7 +187,7 @@ class Login_screen extends StatelessWidget {
               ),
               Positioned(
                 left: 34,
-                top: 455,
+                top: 435,
                 child: Container(
                   width: 340,
                   height: 65,
@@ -170,12 +222,13 @@ class Login_screen extends StatelessWidget {
                     'SmartPark',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Color(0xFF00DE65),
+                      color: Color.fromRGBO(0, 222, 101, 1),
                       fontSize: 64,
                       fontStyle: FontStyle.italic,
                       fontFamily: 'Inter',
                       fontWeight: FontWeight.w700,
                       decoration: TextDecoration.underline,
+                      decorationColor: Color.fromRGBO(0, 222, 101, 1),
                       height: 0,
                     ),
                   ),
@@ -202,7 +255,7 @@ class Login_screen extends StatelessWidget {
                   width: 337,
                   height: 61,
                   decoration: ShapeDecoration(
-                    color: const Color(0xFFF5860C),
+                    color: const Color(0xFF337913),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),

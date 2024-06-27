@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "28857933936",
-    "project_id": "hackthon-5d162",
-    "storage_bucket": "hackthon-5d162.appspot.com"
+    "project_number": "505234543952",
+    "firebase_url": "https://dipex-ba431-default-rtdb.firebaseio.com",
+    "project_id": "dipex-ba431",
+    "storage_bucket": "dipex-ba431.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:28857933936:android:c0b9b60615fce0e0dad4b5",
+        "mobilesdk_app_id": "1:505234543952:android:2aa594d627b8e4b6d48855",
         "android_client_info": {
           "package_name": "com.example.flutter_application_street_parking"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCXfkrGFBt55jx9xTaodNIJTlPUIxpJH8w"
+          "current_key": "AIzaSyA_lT29mjWEmeDokU30Z6of1iUvqm5DwnE"
         }
       ],
       "services": {

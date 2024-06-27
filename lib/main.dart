@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_street_parking/firebase_options.dart';
 import 'package:flutter_application_street_parking/screens/components/globals.dart';
 import 'screens/components/welcome_screen.dart';
-import 'screens/components/home_screen.dart'; // Import your home screen file
+import 'screens/components/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,16 +26,16 @@ class MyApp extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Scaffold(
               body: Center(
-                // child: SpinKitFadingCube(
-                //   color: kPrimaryColor,
-                //   size: 50.0,
-                // ),
-              ),
+                  // child: SpinKitFadingCube(
+                  //   color: kPrimaryColor,
+                  //   size: 50.0,
+                  // ),
+                  ),
             );
           } else {
             if (snapshot.hasData) {
               // User is already authenticated, navigate to home screen
-              return const home_screen();
+              return home_screen();
             } else {
               // User is not authenticated, show welcome screen
               return const welcome_screen();

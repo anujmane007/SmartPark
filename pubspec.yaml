@@ -33,7 +33,11 @@ dependencies:
   firebase_core: ^2.22.0
   firebase_auth: ^4.14.0
   cloud_firestore: ^4.13.1
-  http: ^1.1.0
+  firebase_database: ^10.4.0
+  http: ^0.13.6
+  twilio_dart_api: ^0.0.1
+  shared_preferences: ^2.2.2
+  file_picker: ^6.2.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -41,6 +45,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/home_page_background.png"  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

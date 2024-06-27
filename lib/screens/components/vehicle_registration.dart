@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_application_street_parking/screens/components/Report_page.dart';
+import 'package:flutter_application_street_parking/screens/components/Tag_Installation.dart';
+import 'package:flutter_application_street_parking/screens/components/first_screen.dart';
+import 'package:flutter_application_street_parking/screens/components/home_screen.dart';
+import 'package:flutter_application_street_parking/screens/components/login_screen.dart';
 import 'package:flutter_application_street_parking/screens/components/register_vechicle_screen.dart';
+import 'package:flutter_application_street_parking/screens/components/registration_screen.dart';
 
 class VehicleRegistration extends StatefulWidget {
   final String userUid;
@@ -68,6 +74,100 @@ class _VehicleRegistrationState extends State<VehicleRegistration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Vehicle Registration"),
+        centerTitle: true,
+        backgroundColor: Colors.orangeAccent,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.orangeAccent,
+              ),
+              child: Text(
+                'Hi',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: const Text('Welcome'),
+              onTap: () {
+                // Navigate to the home page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const first_screen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                // Navigate to the home page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => home_screen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Login'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login_screen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Sign-up'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RegistrationScreen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Report'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const report_page()),
+                ); // Closes the drawer
+              },
+            ), // Add more ListTile widgets for additional pages
+            ListTile(
+              title: const Text('Install Tag'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TagInstallation()),
+                ); // Closes the drawer
+              },
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
@@ -315,28 +415,28 @@ class _VehicleRegistrationState extends State<VehicleRegistration> {
                   ),
                 ),
               ),
-              Positioned(
-                left: 32,
-                top: 775,
-                child: Container(
-                  width: 337,
-                  height: 61,
-                  decoration: ShapeDecoration(
-                    color: const Color.fromARGB(255, 0, 240, 92),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    shadows: const [
-                      BoxShadow(
-                        color: Color(0x3F000000),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              // Positioned(
+              //   left: 32,
+              //   top: 775,
+              //   child: Container(
+              //     width: 337,
+              //     height: 61,
+              //     decoration: ShapeDecoration(
+              //       color: const Color.fromARGB(255, 0, 240, 92),
+              //       shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(16),
+              //       ),
+              //       shadows: const [
+              //         BoxShadow(
+              //           color: Color(0x3F000000),
+              //           blurRadius: 4,
+              //           offset: Offset(0, 4),
+              //           spreadRadius: 0,
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              // ),
               Positioned(
                 left: 30,
                 top: 785,

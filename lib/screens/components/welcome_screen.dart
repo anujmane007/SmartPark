@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_application_street_parking/screens/components/first_screen.dart';
 
 // import 'package:flutter_auth/Screens/Login/login_screen.dart';
@@ -56,7 +57,7 @@ class welcome_screen extends StatelessWidget {
                   width: 350,
                   height: 72,
                   decoration: ShapeDecoration(
-                    color: const Color(0xFF3BB403),
+                    color: const Color(0xFF337913),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -101,7 +102,7 @@ class welcome_screen extends StatelessWidget {
                   ),
                 ),
               ),
-        
+
               // Positioned(
               //   left: 40,
               //   top: 742,
@@ -133,7 +134,7 @@ class welcome_screen extends StatelessWidget {
                         TextSpan(
                           text: 'Welcome To',
                           style: TextStyle(
-                            color: Color(0xFFFF8900),
+                            color: Color(0xFF5BC52A),
                             fontSize: 50,
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w900,
@@ -143,7 +144,7 @@ class welcome_screen extends StatelessWidget {
                         TextSpan(
                           text: ' ',
                           style: TextStyle(
-                            color: Color(0xFFFF8900),
+                            color: Color(0xFF5BC52A),
                             fontSize: 55,
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w900,
@@ -153,7 +154,7 @@ class welcome_screen extends StatelessWidget {
                         TextSpan(
                           text: 'SmartPark',
                           style: TextStyle(
-                            color: Color(0xFF3BB403),
+                            color: Color(0xFF5BC52A),
                             fontSize: 70,
                             fontStyle: FontStyle.italic,
                             fontFamily: 'Inter',

@@ -1,10 +1,109 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_street_parking/screens/components/Report_page.dart';
+import 'package:flutter_application_street_parking/screens/components/first_screen.dart';
+import 'package:flutter_application_street_parking/screens/components/home_screen.dart';
+import 'package:flutter_application_street_parking/screens/components/login_screen.dart';
+import 'package:flutter_application_street_parking/screens/components/registration_screen.dart';
 import 'package:flutter_application_street_parking/screens/components/tag_request.dart';
 
 class TagInstallation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Smart Tag"),
+        centerTitle: true,
+        backgroundColor: Colors.orangeAccent,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.orangeAccent,
+              ),
+              child: Text(
+                'Hi',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: const Text('Welcome'),
+              onTap: () {
+                // Navigate to the home page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const first_screen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                // Navigate to the home page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => home_screen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Login'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login_screen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Sign-up'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RegistrationScreen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Report'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const report_page()),
+                ); // Closes the drawer
+              },
+            ), // Add more ListTile widgets for additional pages
+            ListTile(
+              title: const Text('Install Tag'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TagInstallation()),
+                ); // Closes the drawer
+              },
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
@@ -21,11 +120,11 @@ class TagInstallation extends StatelessWidget {
           child: Stack(
             children: [
               // Background Container
-              _buildBackgroundContainer(),
-        
+              // _buildBackgroundContainer(),
+
               // Texts and Images
               _buildTextsAndImages(context),
-        
+
               // Borders
               _buildBorders(context),
             ],
@@ -36,61 +135,16 @@ class TagInstallation extends StatelessWidget {
   }
 
   // Extracted widget for the background container
-  Widget _buildBackgroundContainer() {
-    return Positioned(
-      left: 30,
-      top: 30,
-      child: Container(
-        width: 370,
-        height: 70,
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            begin: Alignment(-1.00, 0.03),
-            end: Alignment(1, -0.03),
-            colors: [Color(0xFFFF6C03), Color(0xFFFFB700)],
-          ),
-          shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(30),
-          boxShadow: const [
-            BoxShadow(
-              color: Color(0x3F000000),
-              blurRadius: 4,
-              offset: Offset(0, 4),
-              spreadRadius: 0,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   // Extracted widget for texts and images
   Widget _buildTextsAndImages(BuildContext context) {
     return Stack(
       children: [
-        const Positioned(
-          left: 41,
-          top: 47,
-          child: SizedBox(
-            width: 348,
-            height: 71,
-            child: Text(
-              'Smart Park Tag',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 32,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-          ),
-        ),
         Positioned(
-          left: -26,
-          top: 129,
+          left: -10,
+          top: 30,
           child: Container(
-            width: 361,
+            width: 355,
             height: 255,
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -100,11 +154,12 @@ class TagInstallation extends StatelessWidget {
             ),
           ),
         ),
+        // WHITE BOX
         Positioned(
           left: 14,
-          top: 415,
+          top: 300,
           child: Container(
-            width: 402,
+            width: 362,
             height: 482,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -122,11 +177,11 @@ class TagInstallation extends StatelessWidget {
           ),
         ),
         const Positioned(
-          left: 37,
-          top: 798,
+          left: 17,
+          top: 688,
           child: SizedBox(
             width: 356,
-            height: 73,
+            height: 79,
             child: Text(
               'Maintenance \nRequest',
               textAlign: TextAlign.center,
@@ -140,18 +195,18 @@ class TagInstallation extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: 40,
-          top: 562,
+          left: 20,
+          top: 452,
           child: InkWell(
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => tag_request()),
+                MaterialPageRoute(builder: (context) => const tag_request()),
               );
             },
             child: const SizedBox(
               width: 356,
-              height: 73,
+              height: 78,
               child: Text(
                 'Place Tag \nInstallation request',
                 textAlign: TextAlign.center,
@@ -166,13 +221,13 @@ class TagInstallation extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: 164,
-          top: 687,
+          left: 144,
+          top: 580,
           child: InkWell(
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => tag_request()),
+                MaterialPageRoute(builder: (context) => const tag_request()),
               );
             },
             child: Container(
@@ -188,8 +243,8 @@ class TagInstallation extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: 203.92,
-          top: 198.52,
+          left: 200,
+          top: 118.52,
           child: Transform(
             transform: Matrix4.identity()
               ..translate(0.0, 0.0)
@@ -216,9 +271,9 @@ class TagInstallation extends StatelessWidget {
       children: [
         Positioned(
           left: 33,
-          top: 657,
+          top: 557,
           child: Container(
-            width: 364,
+            width: 334,
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               border: Border.all(
@@ -229,13 +284,13 @@ class TagInstallation extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: 164,
-          top: 447,
+          left: 144,
+          top: 327,
           child: InkWell(
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => tag_request()),
+                MaterialPageRoute(builder: (context) => const tag_request()),
               );
             },
             child: Container(

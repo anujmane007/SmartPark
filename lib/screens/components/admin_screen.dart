@@ -115,8 +115,8 @@ class admin_screen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    shadows: [
-                      const BoxShadow(
+                    shadows: const [
+                      BoxShadow(
                         color: Color(0x3F000000),
                         blurRadius: 4,
                         offset: Offset(0, 4),

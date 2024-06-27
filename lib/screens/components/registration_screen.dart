@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_street_parking/screens/components/globals.dart';
-import 'package:flutter_application_street_parking/screens/components/vehicle_registration.dart';
+import 'package:flutter_application_street_parking/screens/components/first_screen.dart';
+import 'package:flutter_application_street_parking/screens/components/home_screen.dart';
+import 'package:flutter_application_street_parking/screens/components/login_screen.dart';
+// import 'package:flutter_application_street_parking/screens/components/globals.dart';
+// import 'package:flutter_application_street_parking/screens/components/vehicle_registration.dart';
 import 'package:flutter_application_street_parking/screens/components/verification_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -15,6 +18,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
 
   Future<String?> _registerUser() async {
     try {
@@ -71,6 +75,52 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   Widget build(BuildContext context) {
     var _mobileController;
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Register"),
+        backgroundColor: Colors.orangeAccent,
+        centerTitle: true,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.orangeAccent,
+              ),
+              child: Text(
+                'Hi',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: const Text('Welcome'),
+              onTap: () {
+                // Navigate to the home page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const first_screen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Login'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login_screen()),
+                ); // Closes the drawer
+              },
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Form(
@@ -85,10 +135,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 //  USERNAME VALIDATION
                 Positioned(
                   left: 31,
-                  top: 416,
+                  top: 465,
                   child: Container(
-                    width: 340,
-                    height: 65,
+                    width: 335,
+                    height: 55,
                     decoration: ShapeDecoration(
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
@@ -115,7 +165,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ),
                 const Positioned(
                   left: 55,
-                  top: 380,
+                  top: 430,
                   child: SizedBox(
                     width: 211,
                     height: 34,
@@ -130,14 +180,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ),
                   ),
                 ),
-        
+
                 // PASSWORD VALIDATION
                 Positioned(
                   left: 31,
-                  top: 540,
+                  top: 560,
                   child: Container(
-                    width: 340,
-                    height: 65,
+                    width: 335,
+                    height: 55,
                     decoration: ShapeDecoration(
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
@@ -152,7 +202,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       controller: _passwordController,
                       decoration: const InputDecoration(
                         // hintText: 'Enter your text here',
-        
                         border: InputBorder.none,
                       ),
                       validator: (value) {
@@ -165,10 +214,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         if (!value.contains(RegExp(r'[A-Z]'))) {
                           return 'Password must contain at least one uppercase letter';
                         }
-                        if (!value.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
+                        if (!value
+                            .contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
                           return 'Password must contain at least one special character';
                         }
-        
+
                         return null;
                       },
                     ),
@@ -179,8 +229,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   left: 31,
                   top: 660,
                   child: Container(
-                    width: 340,
-                    height: 65,
+                    width: 335,
+                    height: 55,
                     decoration: ShapeDecoration(
                       color: Colors.white,
                       shape: RoundedRectangleBorder(
@@ -192,17 +242,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       ),
                     ),
                     child: TextFormField(
-                      controller: _mobileController,
+                      controller: _confirmPasswordController,
                       decoration: const InputDecoration(
                         // hintText: 'Enter your text here',
                         border: InputBorder.none,
                       ),
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter your Contact Details';
-                        }
-                        if (!RegExp(r'^[0-9]{10}$').hasMatch(value)) {
-                          return 'Invalid Contact Details';
+                        if (value != _passwordController.text) {
+                          return 'Passwords do not match';
                         }
                         return null;
                       },
@@ -216,7 +263,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     width: 211,
                     height: 34,
                     child: Text(
-                      'Mobile No:',
+                      'Confirm Password:',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 24,
@@ -229,7 +276,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ),
                 const Positioned(
                   left: 55,
-                  top: 505,
+                  top: 527,
                   child: SizedBox(
                     width: 211,
                     height: 34,
@@ -244,7 +291,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ),
                   ),
                 ),
-        
+
                 Positioned(
                   left: 32,
                   top: 760,
@@ -252,7 +299,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     width: 337,
                     height: 61,
                     decoration: ShapeDecoration(
-                      color: const Color(0xFFF5860C),
+                      color: const Color(0xFF337913),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
@@ -274,12 +321,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     onTap: () async {
                       if (_formKey.currentState!.validate()) {
                         String? userUid = await _registerUser();
-        
+
                         if (userUid != null) {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) {
-                                return const verification_screen();
+                                return Login_screen();
                               },
                             ),
                           );
@@ -290,7 +337,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       width: 339,
                       height: 40,
                       child: Text(
-                        'Send OTP',
+                        'Register',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
@@ -305,7 +352,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ),
                 Positioned(
                   left: 15,
-                  top: 100,
+                  top: 170,
                   child: Container(
                     width: 370,
                     height: 259,
@@ -320,7 +367,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ),
                 const Positioned(
                   left: 20,
-                  top: 16,
+                  top: 30,
                   child: SizedBox(
                     width: 343,
                     height: 122,
@@ -334,6 +381,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w700,
                         decoration: TextDecoration.underline,
+                        decorationColor: Color(0xFF00DE65),
                         height: 0,
                       ),
                     ),

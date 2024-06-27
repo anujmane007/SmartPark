@@ -1,6 +1,12 @@
 import 'dart:convert';
- import 'package:flutter/material.dart';
- import 'package:http/http.dart' as http;
+import 'package:flutter/material.dart';
+import 'package:flutter_application_street_parking/screens/components/Report_page.dart';
+import 'package:flutter_application_street_parking/screens/components/Tag_Installation.dart';
+import 'package:flutter_application_street_parking/screens/components/first_screen.dart';
+import 'package:flutter_application_street_parking/screens/components/home_screen.dart';
+import 'package:flutter_application_street_parking/screens/components/login_screen.dart';
+import 'package:flutter_application_street_parking/screens/components/registration_screen.dart';
+import 'package:http/http.dart' as http;
 
 class tag_request extends StatefulWidget {
   const tag_request({Key? key}) : super(key: key);
@@ -16,6 +22,100 @@ class _tag_requestState extends State<tag_request> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Place Request"),
+        centerTitle: true,
+        backgroundColor: Colors.orangeAccent,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.orangeAccent,
+              ),
+              child: Text(
+                'Hi',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: const Text('Welcome'),
+              onTap: () {
+                // Navigate to the home page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const first_screen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                // Navigate to the home page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => home_screen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Login'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login_screen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Sign-up'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const RegistrationScreen()),
+                ); // Closes the drawer
+              },
+            ),
+            ListTile(
+              title: const Text('Report'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const report_page()),
+                ); // Closes the drawer
+              },
+            ), // Add more ListTile widgets for additional pages
+            ListTile(
+              title: const Text('Install Tag'),
+              onTap: () {
+                // Navigate to the profile page or perform any action
+                Navigator.pop(context); // Closes the drawer
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TagInstallation()),
+                ); // Closes the drawer
+              },
+            ),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
@@ -124,7 +224,8 @@ class _tag_requestState extends State<tag_request> {
                         selectedVehicleType = newValue;
                       });
                     },
-                    items: ['Maintenance', 'New Installation'].map((String value) {
+                    items:
+                        ['Maintenance', 'New Installation'].map((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
                         child: Text(
@@ -207,7 +308,8 @@ class _tag_requestState extends State<tag_request> {
   }
 
   Future<void> sendRequestEmail() async {
-    const apiKey = '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'; // Replace with your actual SendGrid API key
+    const apiKey =
+        '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'; // Replace with your actual SendGrid API key
     final url = Uri.parse('https://api.sendgrid.com/v3/mail/send');
 
     final headers = {
@@ -224,82 +326,86 @@ class _tag_requestState extends State<tag_request> {
           'subject': 'Tag Request',
         },
       ],
-      'from': {'email': 'vmane5785@gmail.com'}, // Replace with your SendGrid verified email
+      'from': {
+        'email': 'vmane5785@gmail.com'
+      }, // Replace with your SendGrid verified email
       'content': [
         {
           'type': 'text/plain',
-          'value': 'Username: ${usernameController.text}\nRequest Type: $selectedVehicleType',
+          'value':
+              'Username: ${usernameController.text}\nRequest Type: $selectedVehicleType',
         },
       ],
     });
 
-   try {
-  final response = await http.post(url, headers: headers, body: body);
+    try {
+      final response = await http.post(url, headers: headers, body: body);
 
-  if (response.statusCode == 202) {
-    // Show success dialog
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Success'),
-          content: const Text('Email sent successfully.'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('OK'),
-            ),
-          ],
+      if (response.statusCode == 202) {
+        // Show success dialog
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text('Success'),
+              content: const Text('Email sent successfully.'),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          },
         );
-      },
-    );
 
-    // You can also perform additional actions or navigate to another screen here
-  } else {
-    // Show error dialog
-    // ignore: use_build_context_synchronously
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Error'),
-          content: Text('Failed to send email. Status code: ${response.statusCode}'),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('OK'),
-            ),
-          ],
+        // You can also perform additional actions or navigate to another screen here
+      } else {
+        // Show error dialog
+        // ignore: use_build_context_synchronously
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text('Error'),
+              content: Text(
+                  'Failed to send email. Status code: ${response.statusCode}'),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          },
         );
-      },
-    );
-    // Handle the error, show an error message, or navigate to an error screen
-  }
-} catch (e) {
-  // Show error dialog for exceptions
-  // ignore: use_build_context_synchronously
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return AlertDialog(
-        title: const Text('Error'),
-        content: Text('Error sending email: $e'),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: const Text('OK'),
-          ),
-        ],
+        // Handle the error, show an error message, or navigate to an error screen
+      }
+    } catch (e) {
+      // Show error dialog for exceptions
+      // ignore: use_build_context_synchronously
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Error'),
+            content: Text('Error sending email: $e'),
+            actions: <Widget>[
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('OK'),
+              ),
+            ],
+          );
+        },
       );
-    },
-  );
-  // Handle the error, show an error message, or navigate to an error screen
-}
+      // Handle the error, show an error message, or navigate to an error screen
+    }
   }
 }

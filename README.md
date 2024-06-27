@@ -1,15 +1,22 @@
-#Flutter Street Parking App
+# Smart Park: Intelligent Parking System
 
-Here is an Step by Step Procedure of contributing process
+## Overview
 
-Set up the git environment in your system
+- Developed an Intelligent Parking System called 'Smart Park,' which uses Dart for app development and Python for the system's backend. In addition, I used Firebase for the database.
 
-Then Clone Reposiratory in VS Code.
+![App Interface](images/app_interface.png)
+![Backend System](images/backend_system.png)
 
-Then If you changes it git add .
+- Integrated RFID and ultrasonic sensors, calculated dynamic parking prices, and ensured secure user & admin authentication with Firebase.
 
-git status
+![RFID Sensors](images/rfid_sensors.png)
+![Firebase Authentication](images/firebase_auth.png)
 
-git commit -m "Your Comment"
+- A push notification capability was implemented using the Twilio API service, and emails were sent to users' smartphones via the SendGrid mail service.
 
-git push 
+![Twilio Notifications](images/twilio_notifications.png)
+![SendGrid Email](images/sendgrid_email.png)
+
+- Administrators can now access real-time data analytics with Power BI.
+
+![Power BI Analytics](images/powerbi_analytics.png)
