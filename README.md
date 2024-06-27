@@ -8,6 +8,8 @@
 
 - A push notification capability was implemented using the Twilio API service, and emails were sent to users' smartphones via the SendGrid mail service.
 
+![User Interface 1](assets/images/User_interface1.png)
+![User Interface 2](assets/images/User_interface2.png)
 
 - Administrators can now access real-time data analytics with Power BI.
 
