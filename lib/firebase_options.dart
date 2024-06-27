@@ -44,7 +44,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBKrzFsOBi9oMknp-vJUUxLQim-GGmHs5o',
+    apiKey: 'Rplace With your Api key',
     appId: '1:505234543952:web:69cc6839153b366ad48855',
     messagingSenderId: '505234543952',
     projectId: 'dipex-ba431',
