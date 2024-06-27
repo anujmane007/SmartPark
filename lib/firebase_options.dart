@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA_lT29mjWEmeDokU30Z6of1iUvqm5DwnE',
+    apiKey: 'Rplace With your Api key',
     appId: '1:505234543952:android:2aa594d627b8e4b6d48855',
     messagingSenderId: '505234543952',
     projectId: 'dipex-ba431',
@@ -64,7 +64,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD1qQy4gurvX-d2w_whpaXzeyWjYelUti4',
+    apiKey: 'Rplace With your Api key',
     appId: '1:505234543952:ios:164e475c5b874033d48855',
     messagingSenderId: '505234543952',
     projectId: 'dipex-ba431',
@@ -74,7 +74,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD1qQy4gurvX-d2w_whpaXzeyWjYelUti4',
+    apiKey: 'Rplace With your Api key',
     appId: '1:505234543952:ios:9961b6b00b349ed8d48855',
     messagingSenderId: '505234543952',
     projectId: 'dipex-ba431',
